@@ -11,7 +11,6 @@ public class BattleShipAttackInput implements Input {
 	
 	public void setInput(String input) {
 		this.input = input;
-		
 	}
 
 }
