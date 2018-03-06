@@ -15,7 +15,6 @@ public class MyRunnable implements Runnable {
 
 	public MyRunnable(BattleshipGames battleshipGames, IPlayer player1, IPlayer player2) {
 		this.battleshipGames = battleshipGames;
-		// TODO Auto-generated constructor stub
 		this.player1 = player1;
 		this.player2 = player2;
 	}
@@ -26,13 +25,12 @@ public class MyRunnable implements Runnable {
 		while (true) {
 			System.out.println(player.getActive().getName()+" play your chance:");
 			String next = scan.next();
-			battleshipGames.play(player.getActive(), new InputBuilder().withInput(next).build());
+			battleshipGames.play(player, new InputBuilder().withInput(next).build());
 			if(!player.switchPlayer()){
 				System.out.println("Player "+player.getActive().getName()+" has won the battle");
 				break;
 			}
 		}
 	}
-
 
 }

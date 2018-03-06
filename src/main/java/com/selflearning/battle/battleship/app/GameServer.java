@@ -1,49 +1,57 @@
 package com.selflearning.battle.battleship.app;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 import com.selflearning.battle.battleship.games.BattleshipGames;
 import com.selflearning.battle.battleship.model.BattleShipArena;
-import com.selflearning.battle.battleship.model.BattleShipBuilder;
 import com.selflearning.battle.battleship.model.IArena;
 import com.selflearning.battle.battleship.model.IPlayer;
 import com.selflearning.battle.battleship.model.Player;
+import com.selflearning.battle.battleship.model.ShipMaker;
 
 public class GameServer {
 	
 	
-	public static void main(String ...strings){
-		IPlayer player1 = new Player("Vijay");
-		
-		IArena battleShipArena1 = new BattleShipArena('G', 9, 2);
-		battleShipArena1.createBoard( new BattleShipBuilder().withRow('A').withCol(1).withShipType(2).build());
-		battleShipArena1.createBoard( new BattleShipBuilder().withRow('A').withCol(2).withShipType(1).build());
-		battleShipArena1.createBoard( new BattleShipBuilder().withRow('B').withCol(5).withShipType(2).build());
+	public static void main(String... strings) {
+		Scanner scanner = new Scanner(System.in);
+		IPlayer player1 = new Player(scanner.next());
+		IArena battleShipArena1 = new BattleShipArena(scanner.next().charAt(0), scanner.nextInt(), scanner.nextInt());
+		ShipMaker shipMaker1 = new ShipMaker(battleShipArena1);
 		player1.setArena(battleShipArena1);
-		
-		IPlayer player2 = new Player("Pallavi");
-		IArena battleShipArena2 = new BattleShipArena('G', 9, 2);
-		battleShipArena2.createBoard( new BattleShipBuilder().withRow('B').withCol(1).withShipType(2).build());
-		battleShipArena2.createBoard( new BattleShipBuilder().withRow('B').withCol(2).withShipType(1).build());
-		battleShipArena2.createBoard( new BattleShipBuilder().withRow('A').withCol(5).withShipType(2).build());
+		IPlayer player2 = new Player(scanner.next());
+		IArena battleShipArena2 = new BattleShipArena(scanner.next().charAt(0), scanner.nextInt(), scanner.nextInt());
+		ShipMaker shipMaker2 = new ShipMaker(battleShipArena2);
 		player2.setArena(battleShipArena2);
-		
-		HashMap<IPlayer, IArena> hashMap = new HashMap<IPlayer, IArena>();
-		hashMap.put(player1, battleShipArena2);
-		hashMap.put(player2, battleShipArena1);
-		BattleshipGames battleshipGames = new BattleshipGames(hashMap);
-		Thread t1 = new Thread (new MyRunnable(battleshipGames,player1,player2) );
+		int noOfShips = scanner.nextInt();
+		for (int ships = 0; ships < 2 * noOfShips; ships++) {
+			String firstGrid = scanner.next();
+			Integer length = scanner.nextInt();
+			Integer width = scanner.nextInt();
+			Integer shipType = scanner.nextInt();
+			if (ships % 2 == 0){
+				if(shipMaker1.makeShips(firstGrid, length, width, shipType)){
+					System.out.println("this is overlappinginput kindly reenter");
+					continue;
+				}
+			}
+			else{
+				if(shipMaker2.makeShips(firstGrid, length, width, shipType)){
+					System.out.println("this is overlappinginput kindly reenter");
+					continue;
+				}
+			}
+
+		}
+		BattleshipGames battleshipGames = new BattleshipGames();
+		Thread t1 = new Thread(new MyRunnable(battleshipGames, player1, player2));
 		t1.start();
 		try {
 			t1.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-//	private void initializeGame(String whichGame){
-//		
-//	}
 
 }
