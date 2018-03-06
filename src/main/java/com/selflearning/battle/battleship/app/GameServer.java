@@ -1,6 +1,5 @@
 package com.selflearning.battle.battleship.app;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 import com.selflearning.battle.battleship.games.BattleshipGames;
@@ -25,21 +24,15 @@ public class GameServer {
 		player2.setArena(battleShipArena2);
 		int noOfShips = scanner.nextInt();
 		for (int ships = 0; ships < 2 * noOfShips; ships++) {
+			ShipMaker current;
 			String firstGrid = scanner.next();
 			Integer length = scanner.nextInt();
 			Integer width = scanner.nextInt();
 			Integer shipType = scanner.nextInt();
-			if (ships % 2 == 0){
-				if(shipMaker1.makeShips(firstGrid, length, width, shipType)){
+			current = switchShips(ships,shipMaker1,shipMaker2);
+				if(current.makeShips(firstGrid, length, width, shipType)){
 					System.out.println("this is overlappinginput kindly reenter");
 					continue;
-				}
-			}
-			else{
-				if(shipMaker2.makeShips(firstGrid, length, width, shipType)){
-					System.out.println("this is overlappinginput kindly reenter");
-					continue;
-				}
 			}
 
 		}
@@ -52,6 +45,13 @@ public class GameServer {
 			e.printStackTrace();
 		}
 
+	}
+
+	private static ShipMaker switchShips(int ships, ShipMaker shipMaker1, ShipMaker shipMaker2) {
+		if (ships % 2 == 0){
+			return shipMaker1;
+		}
+		return shipMaker2;
 	}
 
 }
