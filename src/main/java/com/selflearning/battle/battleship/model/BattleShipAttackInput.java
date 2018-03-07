@@ -1,6 +1,4 @@
-package com.selflearning.battle.battleship.games;
-
-import com.selflearning.battle.battleship.model.Input;
+package com.selflearning.battle.battleship.model;
 
 public class BattleShipAttackInput implements Input {
 

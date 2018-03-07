@@ -1,7 +1,5 @@
 package com.selflearning.battle.battleship.model;
 
-import com.selflearning.battle.battleship.games.BattleShipAttackInput;
-
 public class InputBuilder {
 	private String input;
 
