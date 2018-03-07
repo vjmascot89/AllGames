@@ -15,8 +15,7 @@ public class GameServer {
 	
 	public static void main(String... strings) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter Player1 name :");
-		System.out.println("Enter Player2 name :");
+		System.out.println("Enter Player1 name  and Player2 name:");
 		IPlayerWrapper playerWrapper  = new PlayerWrapper(new Player(scanner.next()),new Player(scanner.next()));
 		System.out.println("Enter the max Row Char[A] max Col[1] max ShipType[1] as space seprated values :");
 		char maxRow = scanner.next().charAt(0);
