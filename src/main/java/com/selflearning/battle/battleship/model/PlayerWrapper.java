@@ -12,7 +12,7 @@ public class PlayerWrapper implements IPlayerWrapper {
 		this.player2 = player2;
 	}
 
-	public IPlayer getActive() {
+	public IPlayer getActivePlayer() {
 		return player1;
 	}
 
@@ -21,11 +21,11 @@ public class PlayerWrapper implements IPlayerWrapper {
 	}
 
 	public boolean switchPlayer() {
-		if (getActive().getStatus().equals(HitOrMissOrFinish.MISS)) {
+		if (getActivePlayer().getStatus().equals(HitOrMissOrFinish.MISS)) {
 			IPlayer tmp = player1;
 			player1 = player2;
 			player2 = tmp;
-		} else if (getActive().getStatus().equals(HitOrMissOrFinish.FINISH)) {
+		} else if (getActivePlayer().getStatus().equals(HitOrMissOrFinish.FINISH)) {
 			return false;
 		}
 		return true;

@@ -10,7 +10,7 @@ public class BattleshipGames implements IGame {
 
 		HitOrMissOrFinish hitOrMiss = player.getPassivePlayer().getArena().makeMove(input);
 
-		player.getActive().setStatus(hitOrMiss);
+		player.getActivePlayer().setStatus(hitOrMiss);
 
 	}
 
