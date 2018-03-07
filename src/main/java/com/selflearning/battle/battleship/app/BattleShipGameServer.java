@@ -11,7 +11,7 @@ import com.selflearning.battle.battleship.model.Player;
 import com.selflearning.battle.battleship.model.BattleShipPlayerWrapper;
 import com.selflearning.battle.battleship.model.ShipMaker;
 
-public class GameServer {
+public class BattleShipGameServer {
 	
 	
 	public static void main(String... strings) {
@@ -48,7 +48,7 @@ public class GameServer {
 		}
 		
 		BattleshipGames battleshipGames = new BattleshipGames();
-		Thread t1 = new Thread(new MyRunnable(battleshipGames,playerWrapper));
+		Thread t1 = new Thread(new BattleShipGameRunnable(battleshipGames,playerWrapper));
 		t1.start();
 		try {
 			t1.join();

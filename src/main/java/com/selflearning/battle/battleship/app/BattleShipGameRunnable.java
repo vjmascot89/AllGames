@@ -8,11 +8,11 @@ import com.selflearning.battle.battleship.model.IPlayerWrapper;
 import com.selflearning.battle.battleship.model.InputBuilder;
 import com.selflearning.battle.battleship.model.BattleShipPlayerWrapper;
 
-public class MyRunnable implements Runnable {
+public class BattleShipGameRunnable implements Runnable {
 
 	private BattleshipGames battleshipGames;
 	private IPlayerWrapper player;
-	public MyRunnable(BattleshipGames battleshipGames, IPlayerWrapper player) {
+	public BattleShipGameRunnable(BattleshipGames battleshipGames, IPlayerWrapper player) {
 		this.battleshipGames = battleshipGames;
 		this.player = player;
 
