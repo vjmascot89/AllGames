@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 import com.selflearning.battle.battleship.games.BattleshipGames;
 import com.selflearning.battle.battleship.model.IPlayer;
+import com.selflearning.battle.battleship.model.IPlayerWrapper;
 import com.selflearning.battle.battleship.model.InputBuilder;
-import com.selflearning.battle.battleship.model.PlayerWrapper;
+import com.selflearning.battle.battleship.model.BattleShipPlayerWrapper;
 
 public class MyRunnable implements Runnable {
 

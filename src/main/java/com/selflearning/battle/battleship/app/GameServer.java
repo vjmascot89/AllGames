@@ -6,8 +6,9 @@ import com.selflearning.battle.battleship.games.BattleshipGames;
 import com.selflearning.battle.battleship.model.BattleShipArena;
 import com.selflearning.battle.battleship.model.IArena;
 import com.selflearning.battle.battleship.model.IPlayer;
+import com.selflearning.battle.battleship.model.IPlayerWrapper;
 import com.selflearning.battle.battleship.model.Player;
-import com.selflearning.battle.battleship.model.PlayerWrapper;
+import com.selflearning.battle.battleship.model.BattleShipPlayerWrapper;
 import com.selflearning.battle.battleship.model.ShipMaker;
 
 public class GameServer {
@@ -16,7 +17,7 @@ public class GameServer {
 	public static void main(String... strings) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter Player1 name  and Player2 name:");
-		IPlayerWrapper playerWrapper  = new PlayerWrapper(new Player(scanner.next()),new Player(scanner.next()));
+		IPlayerWrapper playerWrapper  = new BattleShipPlayerWrapper(new Player(scanner.next()),new Player(scanner.next()));
 		System.out.println("Enter the max Row Char[A] max Col[1] max ShipType[1] as space seprated values :");
 		char maxRow = scanner.next().charAt(0);
 		int maxCol  = scanner.nextInt();

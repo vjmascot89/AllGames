@@ -1,7 +1,8 @@
 package com.selflearning.battle.battleship.games;
 
-import com.selflearning.battle.battleship.app.IPlayerWrapper;
 import com.selflearning.battle.battleship.model.HitOrMissOrFinish;
+import com.selflearning.battle.battleship.model.IPlayerWrapper;
+import com.selflearning.battle.battleship.model.Input;
 
 public class BattleshipGames implements IGame {
 

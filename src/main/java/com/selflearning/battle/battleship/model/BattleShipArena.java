@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.selflearning.battle.battleship.games.Input;
 import com.selflearning.battle.battleship.validator.ColumnValidationRule;
 import com.selflearning.battle.battleship.validator.IValidatorRule;
 import com.selflearning.battle.battleship.validator.RowValidationRule;

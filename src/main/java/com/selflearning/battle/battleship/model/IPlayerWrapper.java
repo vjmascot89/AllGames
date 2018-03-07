@@ -1,6 +1,4 @@
-package com.selflearning.battle.battleship.app;
-
-import com.selflearning.battle.battleship.model.IPlayer;
+package com.selflearning.battle.battleship.model;
 
 public interface IPlayerWrapper {
 IPlayer getActivePlayer();
