@@ -1,10 +1,12 @@
 package com.selflearning.battle.battleship.model;
 
+import java.util.Map;
+
 public class ShipMaker {
 
-	private IArena battleShipArena;
+	private IArena<Map<String, Integer>> battleShipArena;
 
-	public ShipMaker(IArena battleShipArena) {
+	public ShipMaker(IArena<Map<String, Integer>> battleShipArena) {
 		this.battleShipArena = battleShipArena;
 		
 	}
