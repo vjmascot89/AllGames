@@ -8,7 +8,6 @@ public class ShipMaker {
 
 	public ShipMaker(IArena<Map<String, Integer>> battleShipArena) {
 		this.battleShipArena = battleShipArena;
-		
 	}
 
 	public Boolean makeShips(String startCol, Integer length, Integer width, Integer shipType) {

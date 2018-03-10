@@ -1,5 +1,8 @@
 package com.selflearning.battle.battleship.model;
 
+
+import java.util.Map;
+
 public interface IArena<T> {
 	public boolean initialize();
 
@@ -7,5 +10,6 @@ public interface IArena<T> {
 
 	public HitOrMissOrFinish makeMove(Input input);
 
-	public T getFieldArrangment();
+	public Map<String,T> getFieldArrangment();
+
 }

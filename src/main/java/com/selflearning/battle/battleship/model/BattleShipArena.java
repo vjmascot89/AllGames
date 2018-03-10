@@ -10,7 +10,9 @@ import com.selflearning.battle.battleship.validator.IValidatorRule;
 import com.selflearning.battle.battleship.validator.RowValidationRule;
 import com.selflearning.battle.battleship.validator.ShipTypeValidationRule;
 
-public class BattleShipArena implements IArena<Map<String, Integer>>{
+
+public class BattleShipArena implements IArena<Integer>{
+
 	List<IValidatorRule> validation;
 	BattleShipBuilder withBuilder;
 	private Map<String, Integer> fieldArrangment= new HashMap<String, Integer>();
